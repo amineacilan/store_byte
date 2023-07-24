@@ -6,12 +6,12 @@ import Product from "./Product";
 import Loading from "../Loading";
 import ReactPaginate from "react-paginate";
 
-const Products = ({ category }) => {
+const Products = ({ category, sort }) => {
   const [itemOffset, setItemOffset] = useState(0);
   const dispatch = useDispatch();
   const { products, productsStatus } = useSelector((state) => state.products);
   console.log(products, "products");
-
+  console.log(sort, "sort");
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
@@ -43,9 +43,17 @@ const Products = ({ category }) => {
         <Loading />
       ) : (
         <div className="flex flex-wrap">
-          {currentItems?.map((product, i) => (
-            <Product key={i} product={product}></Product>
-          ))}
+          {currentItems
+            ?.sort((a, b) =>
+              sort == "inc"
+                ? a.price - b.price
+                : sort == "dec"
+                ? b.price - a.price
+                : ""
+            )
+            ?.map((product, i) => (
+              <Product key={i} product={product}></Product>
+            ))}
         </div>
       )}
       <>
