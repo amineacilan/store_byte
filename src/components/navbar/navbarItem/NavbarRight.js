@@ -23,9 +23,10 @@ const NavbarRight = () => {
           type="text"
           placeholder="Arama Yapınız.."
         ></input>
-        <BsSearch className="cursor-pointer" size={28}></BsSearch>
+        <BsSearch size={28}></BsSearch>
       </div>
-      <FiHeart className="cursor-pointer" size={28}></FiHeart>
+      {/*  className="cursor-pointer" */}
+      <FiHeart size={28}></FiHeart>
       <div onClick={() => navigate("cart")} className="relative cursor-pointer">
         <div className="absolute -top-3 -right-3 bg-teal-500 text-white rounded-full w-5 h-5 flex items-center justify-center">
           {itemCount}
