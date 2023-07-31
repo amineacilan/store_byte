@@ -41,12 +41,12 @@ const DetailComp = ({ productDetail }) => {
       <div>
         <div className="text-4xl font-bold">{productDetail?.title}</div>
         <div className="my-2">{productDetail?.description}</div>
-        <div className="my-2 text-orange-500 text-xl">
+       {/*  <div className="my-2 text-orange-500 text-xl">
           Rating: {productDetail?.rating.rate}
-        </div>
-        <div className="my-2 text-orange-500 text-xl">
+        </div> */}
+     {/*    <div className="my-2 text-orange-500 text-xl">
           Count: {productDetail?.rating.count}
-        </div>
+        </div> */}
         <div className="text-5xl font-bold">
           {productDetail?.price} <span className="text-lg">TL</span>
         </div>
